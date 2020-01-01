@@ -42,5 +42,5 @@ print("\n\n")
 mystring = 'abc'
 tree = {}
 add_to_tree(tree, mystring)
-print(type(tree))
+print(type(tree))  
 print(tree['a']['b'])
