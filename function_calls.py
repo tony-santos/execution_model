@@ -1,7 +1,8 @@
 def add_to_tree(root, value_string):
     """Given a string of characters `value_string`, create or update a
-    series of dictionaries where the value at each level is a dictionary of
-    the characters that have been seen following the current character.
+    series of nested dictionaries where the value at each level is a nested dictionary of
+    the characters that have been seen following the current character. Value for the last character is an empty
+    dictionary.
 
     Example:
     >>> my_string = 'abc'
@@ -41,6 +42,31 @@ print(test_list)
 print("\n\n")
 mystring = 'abc'
 tree = {}
+print("adding 'abc' to empty tree")
 add_to_tree(tree, mystring)
 print(type(tree))
-print(tree['a']['b'])
+print("\ntree:", tree)
+print("\ntree['a']:", tree['a'])
+print("\ntree['a']['b']:", tree['a']['b'])
+print("\ntree['a']['b']['c']:", tree['a']['b']['c'])
+print("adding 'abd' to existing tree")
+add_to_tree(tree, 'abd')
+print("\ntree['a']:", tree['a'])
+print("\ntree['a']['b']:", tree['a']['b'])
+#c & d are at the same level because they were both seen after b
+print("\ntree['a']['b']['c']:", tree['a']['b']['c'])
+print("\ntree['a']['b']['d']:", tree['a']['b']['d'])
+print("adding 'abe' to existing tree")
+add_to_tree(tree, 'abe')
+print("\ntree['a']:", tree['a'])
+print("\ntree['a']['b']:", tree['a']['b'])
+#c, d, e are at the same level because they were both seen after b
+print("\ntree['a']['b']['c']:", tree['a']['b']['c'])
+print("\ntree['a']['b']['d']:", tree['a']['b']['d'])
+print("\ntree['a']['b']['e']:", tree['a']['b']['e'])
+print("adding 'cf' to existing tree")
+add_to_tree(tree, 'abcf')
+print("\ntree['a']:", tree['a'])
+print("\ntree['a']['b']:", tree['a']['b'])
+print("\ntree['a']['b']['c']:", tree['a']['b']['c'])
+
