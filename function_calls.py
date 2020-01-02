@@ -44,6 +44,7 @@ mystring = 'abc'
 tree = {}
 print("adding 'abc' to empty tree")
 add_to_tree(tree, mystring)
+<<<<<<< HEAD
 print(type(tree))
 print("\ntree:", tree)
 print("\ntree['a']:", tree['a'])
@@ -70,3 +71,7 @@ print("\ntree['a']:", tree['a'])
 print("\ntree['a']['b']:", tree['a']['b'])
 print("\ntree['a']['b']['c']:", tree['a']['b']['c'])
 
+=======
+print(type(tree))  
+print(tree['a']['b'])
+>>>>>>> 4176eecb54f894328f0456a43af52a2d4d98aaa8
